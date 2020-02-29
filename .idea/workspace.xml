@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba54ce61-dee6-44da-b786-eb29869450fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/medical_dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/base_options.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/test_options.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/train_options.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/medical_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/medical_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/medical_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/base_options.py" beforeDir="false" afterPath="$PROJECT_DIR$/options/base_options.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/train_options.py" beforeDir="false" afterPath="$PROJECT_DIR$/options/train_options.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="89" selection-start-line="6" selection-start-column="89" selection-end-line="6" selection-end-column="89" />
+            <state relative-caret-position="159">
+              <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
               </folding>
@@ -36,10 +32,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/Program Files/Python37/Lib/site-packages/torch/utils/data/dataloader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="119" column="8" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="8" />
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -47,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/medical_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+            <state relative-caret-position="551">
+              <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -57,24 +54,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/pandas/io/excel/_base.py">
+        <entry file="file://$PROJECT_DIR$/models/medical_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-555">
-              <caret line="275" column="17" lean-forward="true" selection-start-line="275" selection-start-column="17" selection-end-line="275" selection-end-column="17" />
+            <state relative-caret-position="330">
+              <caret line="268" selection-start-line="268" selection-end-line="268" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/options/base_options.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="33" column="45" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="45" />
+            <state relative-caret-position="304">
+              <caret line="28" column="80" lean-forward="true" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="80" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -83,10 +78,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/options/train_options.py">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/scp00544/home/comp/e7251311/Research/reid_baseline-master/utils/logger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state relative-caret-position="133">
+              <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/scp56583/home/comp/e7251311/COMP4055/checkpoints/experiment_name/train_record.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/utils/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="106" column="56" selection-start-line="106" selection-start-column="56" selection-end-line="106" selection-end-column="56" />
+              <folding>
+                <element signature="e#52#89#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,18 +117,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/options/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/utils.py">
+        <entry file="file://$PROJECT_DIR$/options/train_options.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="97" selection-start-line="97" selection-end-line="97" />
-              <folding>
-                <element signature="e#52#89#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="380">
+              <caret line="20" column="62" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -131,6 +139,9 @@
       <find>pid</find>
       <find>util</find>
       <find>data</find>
+      <find>Instan</find>
+      <find>len</find>
+      <find>decy</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -143,20 +154,23 @@
         <option value="$USER_HOME$/AppData/Local/Temp/scp52261/home/comp/e7251311/Research/reid_baseline-master/engine/trainer.py" />
         <option value="$PROJECT_DIR$/dataset/image_floder.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/utils/utils.py" />
-        <option value="$PROJECT_DIR$/options/train_options.py" />
         <option value="$PROJECT_DIR$/options/test_options.py" />
-        <option value="$PROJECT_DIR$/options/base_options.py" />
-        <option value="$PROJECT_DIR$/data/medical_dataset.py" />
+        <option value="$PROJECT_DIR$/models/MyModel.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/scp58173/home/comp/e7251311/Research/reid_baseline-master/modeling/backbones/resnet.py" />
+        <option value="$PROJECT_DIR$/models/medical_model.py" />
+        <option value="$PROJECT_DIR$/options/train_options.py" />
         <option value="$PROJECT_DIR$/train.py" />
+        <option value="$PROJECT_DIR$/data/medical_dataset.py" />
+        <option value="$PROJECT_DIR$/options/base_options.py" />
+        <option value="$PROJECT_DIR$/utils/utils.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="45" />
+    <option name="y" value="16" />
+    <option name="width" value="1940" />
+    <option name="height" value="1025" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -164,7 +178,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,6 +193,11 @@
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="options" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -187,10 +205,20 @@
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -248,6 +276,21 @@
       <option name="presentableId" value="Default" />
       <updated>1582540303141</updated>
     </task>
+    <task id="LOCAL-00001" summary="Update">
+      <created>1582808195935</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582808195935</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Compute Mean and Std">
+      <created>1582815740173</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582815740173</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -258,7 +301,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32768363" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -273,15 +316,12 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update" />
+    <MESSAGE value="Compute Mean and Std" />
+    <option name="LAST_COMMIT_MESSAGE" value="Compute Mean and Std" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/scp52378/home/comp/e7251311/Research/reid_baseline-master/checkpoints/CVPR2019-SYSU/web/images/epoch200_real_A.png" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/scp52275/home/comp/e7251311/Research/reid_baseline-master/checkpoints/CVPR2019-SYSU/web/images/epoch200_fake_A.png" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/scp52174/home/comp/e7251311/Research/reid_baseline-master/checkpoints/CVPR2019-SYSU/web/images/epoch200_fake_B.png" />
@@ -293,27 +333,108 @@
     <entry file="file://$PROJECT_DIR$/data/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/__init__.py">
+    <entry file="file://$PROJECT_DIR$/data/image_floder.py" />
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/pandas/io/excel/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-555">
+          <caret line="275" column="17" lean-forward="true" selection-start-line="275" selection-start-column="17" selection-end-line="275" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python37/Lib/site-packages/torch/utils/data/dataloader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2109">
+          <caret line="119" column="8" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python37/Lib/site-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52630">
+          <caret line="2775" column="34" selection-start-line="2775" selection-start-column="34" selection-end-line="2775" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/MyModel.py" />
+    <entry file="file://$PROJECT_DIR$/options/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://C:/Program Files/Python37/Lib/site-packages/torch/nn/modules/pooling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="538" column="8" selection-start-line="538" selection-start-column="8" selection-end-line="538" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp57053/home/comp/e7251311/Research/reid_baseline-master/modeling/__init__.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp58173/home/comp/e7251311/Research/reid_baseline-master/modeling/backbones/resnet.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp57425/home/comp/e7251311/Research/reid_baseline-master/modeling/baseline.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp32862/home/comp/e7251311/COMP4055/models/medical_model.py" />
+    <entry file="file://C:/Program Files/Python37/Lib/site-packages/torch/__init__.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15789">
+          <caret line="855" column="4" selection-start-line="855" selection-start-column="4" selection-end-line="855" selection-end-column="4" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/options/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/utils.py">
+    <entry file="file://$PROJECT_DIR$/models/medical_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        <state relative-caret-position="330">
+          <caret line="268" selection-start-line="268" selection-end-line="268" />
           <folding>
-            <element signature="e#52#89#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/image_floder.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp00544/home/comp/e7251311/Research/reid_baseline-master/utils/logger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp50832/home/comp/e7251311/COMP4055/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-278">
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/medical_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp56583/home/comp/e7251311/COMP4055/checkpoints/experiment_name/train_record.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/base_options.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="28" column="80" lean-forward="true" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="80" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/options/test_options.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -324,54 +445,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/options/train_options.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        <state relative-caret-position="380">
+          <caret line="20" column="62" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/options/base_options.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="33" column="45" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/pandas/io/excel/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-555">
-          <caret line="275" column="17" lean-forward="true" selection-start-line="275" selection-start-column="17" selection-end-line="275" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/medical_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/Python37/Lib/site-packages/torch/utils/data/dataloader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="119" column="8" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="8" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="89" selection-start-line="6" selection-start-column="89" selection-end-line="6" selection-end-column="89" />
+        <state relative-caret-position="159">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="106" column="56" selection-start-line="106" selection-start-column="56" selection-end-line="106" selection-end-column="56" />
+          <folding>
+            <element signature="e#52#89#0" expanded="true" />
           </folding>
         </state>
       </provider>

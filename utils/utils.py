@@ -4,7 +4,7 @@ import torch
 import numpy as np
 from PIL import Image
 import os
-
+import time
 
 def tensor2im(input_image, imtype=np.uint8):
     """"Converts a Tensor array into a numpy image array.
@@ -95,3 +95,19 @@ def mkdir(path):
     """
     if not os.path.exists(path):
         os.makedirs(path)
+
+class Recorder():
+    def __init__(self,opts):
+        self.filePath=os.path.join(opts.checkpoints_dir,opts.name,"train_record.txt")
+        open(self.filePath, "wt")
+        self.record(("------ {} ------".format(self.getTime())),False)
+    def record(self,message,time=True):
+        with open(self.filePath, "a") as w:
+            if time==True:
+                message="%s %s"%(self.getTime(),message)
+            w.write(message)
+            w.write("\n")
+        print(message)
+
+    def getTime(self):
+        return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
