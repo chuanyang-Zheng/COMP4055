@@ -5,6 +5,7 @@ from torch.nn import init
 from torch.optim import lr_scheduler
 import os
 import numpy as np
+import torch.nn.functional as F
 def weights_init_normal(m):
     classname = m.__class__.__name__
     # print(classname)
@@ -55,37 +56,47 @@ class BasicBlock(nn.Module):
 
 
 class Bottleneck(nn.Module):
-    expansion = 4
 
-    def __init__(self, inplanes, planes, stride=1, downsample=None):
+
+    def __init__(self, inplanes, planes, stride=1, downsample=None,expansion=4):
         super(Bottleneck, self).__init__()
         self.conv1 = nn.Conv2d(inplanes, planes, kernel_size=1, bias=False)
         self.bn1 = nn.BatchNorm2d(planes)
         self.conv2 = nn.Conv2d(planes, planes, kernel_size=3, stride=stride,
                                padding=1, bias=False)
         self.bn2 = nn.BatchNorm2d(planes)
-        self.conv3 = nn.Conv2d(planes, planes * 4, kernel_size=1, bias=False)
-        self.bn3 = nn.BatchNorm2d(planes * 4)
+        self.conv3 = nn.Conv2d(planes, planes * expansion, kernel_size=1, bias=False)
+        self.bn3 = nn.BatchNorm2d(planes * expansion)
         self.relu = nn.ReLU(inplace=True)
         self.downsample = downsample
         self.stride = stride
 
+
     def forward(self, x):
         residual = x
+
 
         out = self.conv1(x)
         out = self.bn1(out)
         out = self.relu(out)
 
+
+
         out = self.conv2(out)
         out = self.bn2(out)
         out = self.relu(out)
 
+
+
         out = self.conv3(out)
         out = self.bn3(out)
 
+
+
         if self.downsample is not None:
             residual = self.downsample(x)
+
+
 
         out += residual
         out = self.relu(out)
@@ -96,42 +107,50 @@ class Bottleneck(nn.Module):
 class ResNet(nn.Module):
     outDefined = 2048
 
-    def __init__(self, block, layers):
+    def __init__(self, block, layers,expansion=4):
         self.inplanes = 64
         super(ResNet, self).__init__()
         self.conv1 = nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3)
         self.bn1 = nn.BatchNorm2d(64)
         self.relu = nn.ReLU(inplace=True)
-        self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2, padding=1)#128
-        self.layer1 = self._make_layer(block, 64, layers[0])
-        self.layer2 = self._make_layer(block, 128, layers[1], stride=2)#64
-        self.layer3 = self._make_layer(block, 256, layers[2], stride=2)#32
-        self.layer4 = self._make_layer(block, 512, layers[3], stride=2)#16
-        self.layer5 = self._make_layer(block, 512, layers[4], stride=2)#8
+
+
+        # self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2, padding=1)#128
+        self.layer0=self._make_layer(block,64,2,stride=2,expansion=1)
+
+        self.layer1 = self._make_layer(block, 64, layers[0],expansion=expansion)
+        self.layer2 = self._make_layer(block, 128, layers[1], stride=2,expansion=expansion)#64
+        self.layer3 = self._make_layer(block, 256, layers[2], stride=2,expansion=expansion)#32
+        self.layer4 = self._make_layer(block, 512, layers[3], stride=2,expansion=expansion)#16
+        self.layer5 = self._make_layer(block, 512, layers[4], stride=2,expansion=expansion)#8
         # self.layer6=self._make_layer(block,512,layers[5],stride=2)
 
+        self.sigmoid=nn.Sigmoid()
+
         self.pool = nn.AdaptiveAvgPool2d(1)
-        self.bn = nn.BatchNorm1d(self.outDefined)
-        self.bn.bias.requires_grad_(False)
+        self.conv_final=nn.Conv2d(512*expansion,256,kernel_size=1)
+        # self.button = nn.Linear(self.outDefined + 2, 2)
 
-        self.top = nn.Linear(self.outDefined, 2)
-        self.button = nn.Linear(self.outDefined + 2, 2)
+        self.Linear=nn.Linear(256,64)
+        self.Linear2 = nn.Linear(64, 16)
+        self.Linear3=nn.Linear(16,4)
 
 
-    def _make_layer(self, block, planes, blocks, stride=1):
+    def _make_layer(self, block, planes, blocks, stride=1,expansion=4):
         downsample = None
-        if stride != 1 or self.inplanes != planes * block.expansion:
+        if stride != 1 or self.inplanes != planes * expansion:
             downsample = nn.Sequential(
-                nn.Conv2d(self.inplanes, planes * block.expansion,
+                nn.Conv2d(self.inplanes, planes * expansion,
                           kernel_size=1, stride=stride),
-                nn.BatchNorm2d(planes * block.expansion),
+                nn.BatchNorm2d(planes * expansion),
             )
 
         layers = []
-        layers.append(block(self.inplanes, planes, stride, downsample))
-        self.inplanes = planes * block.expansion
+        layers.append(block(self.inplanes, planes, stride, downsample,expansion=expansion))
+        self.inplanes = planes * expansion
+
         for i in range(1, blocks):
-            layers.append(block(self.inplanes, planes))
+            layers.append(block(self.inplanes, planes,expansion=expansion))
 
         return nn.Sequential(*layers)
 
@@ -139,7 +158,13 @@ class ResNet(nn.Module):
         result=self.conv1(x)
         result=self.bn1(result)
         result=self.relu(result)
-        result=self.maxpool(result)
+
+
+
+        # result=self.maxpool(result)
+        result=self.layer0(result)
+
+
         result=self.layer1(result)
         result=self.layer2(result)
         result=self.layer3(result)
@@ -148,15 +173,20 @@ class ResNet(nn.Module):
         # result=self.layer6(result)
 
         self.feature1=self.pool(result)
-        self.feature2 = self.feature1.view(self.feature1.shape[0], -1)
-        self.feature3 = self.bn(self.feature2)
-        top = self.top(self.feature3)
-        button = self.button(torch.cat((self.feature3, top), dim=1))
 
-        box=torch.cat((top,button),dim=1)
+        # self.feature2 = self.feature1.view(self.feature1.shape[0], -1)
+        # self.feature3 = self.relu(self.bn(self.feature2))
+        box = self.conv_final(self.feature1)
+
+        box=self.Linear3(self.Linear2(self.Linear(box.view(box.shape[0],-1))))
+        # button = self.sigmoid(self.button(torch.cat((self.feature3, top), dim=1)))
+        #
+        # box=torch.cat((top,button),dim=1)
 
 
         return box
+
+
 #/From https://github.com/YunzhuLi/VisGel/blob/master/models.py
 
 
@@ -281,5 +311,14 @@ class Detection(nn.Module):
 def makeOptimizerAndScheduler(opts,optimizer):
     scheduler = get_scheduler(optimizer, opts)
     return scheduler
+
+def saveNetwork(model,opts,epoch):
+    save_file="%s_Detection.pth"%(epoch)
+    save_file=os.path.join(opts.checkpoints_dir,opts.name,save_file)
+    if len(opts.gpu_ids)>0:
+        torch.save(model.module.cpu().state_dict(),save_file)
+        model.cuda(opts.gpu_ids[0])
+    else:
+        torch.save(model.cpu().state_dict(),save_file)
 
 

@@ -1,6 +1,6 @@
 import argparse
 import os
-from utils import utils
+from utilS import util
 import torch
 import data
 
@@ -33,9 +33,9 @@ class BaseOptions():
         # dataset parameters
         parser.add_argument('--serial_batches', default=False, help='if true, takes images in order to make batches, otherwise takes them randomly')
         parser.add_argument('--num_threads', default=4, type=int, help='# threads for loading data')
-        parser.add_argument('--batch_size', type=int, default=16, help='input batch size')
-        parser.add_argument('--load_size', type=int, default=512, help='scale images to this size')
-        parser.add_argument('--crop_size', type=int, default=512, help='then crop to this size')
+        parser.add_argument('--batch_size', type=int, default=4, help='input batch size')
+        parser.add_argument('--load_size', type=int, default=800, help='scale images to this size')
+        parser.add_argument('--crop_size', type=int, default=800, help='then crop to this size')
         parser.add_argument('--no_flip', action='store_true',help='if specified, do not flip the images for data augmentation')
         # additional parameters
         parser.add_argument('--epoch', type=str, default='latest', help='which epoch to load? set to latest to use latest cached model')
@@ -89,7 +89,7 @@ class BaseOptions():
 
         # save to the disk
         expr_dir = os.path.join(opt.checkpoints_dir, opt.name)
-        utils.mkdirs(expr_dir)
+        util.mkdirs(expr_dir)
         file_name = os.path.join(expr_dir, '{}_opt.txt'.format(opt.phase))
         with open(file_name, 'wt') as opt_file:
             opt_file.write(message)
