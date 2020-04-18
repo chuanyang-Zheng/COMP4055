@@ -1,0 +1,31 @@
+----------------- Options ---------------
+               batch_size: 4                             
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 800                           
+             display_freq: 100                           
+                    epoch: latest                        
+              epoch_count: 1                             
+                  gpu_ids: 1,2,3                         
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 800                           
+                       lr: 0.0002                        
+                lr_policy: linear                        
+                methodNew: False                         
+                 n_epochs: 15                            
+           n_epochs_decay: 15                            
+               n_layers_D: 3                             
+                     name: experiment_name               
+                      ndf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+              num_threads: 4                             
+                    phase: train                         
+          save_epoch_freq: 5                             
+           serial_batches: False                         
+----------------- End -------------------
