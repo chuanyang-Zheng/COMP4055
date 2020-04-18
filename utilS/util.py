@@ -98,7 +98,7 @@ def mkdir(path):
 
 class Recorder():
     def __init__(self,opts):
-        self.filePath=os.path.join(opts.checkpoints_dir,opts.name,"train_record.txt")
+        self.filePath=os.path.join(opts.checkpoints_dir,opts.name,"train_record-"+opts.record_ID+".txt")
         open(self.filePath, "a")
         self.record(("------ {} ------".format(self.getTime())),False)
     def record(self,message,time=True):
@@ -152,7 +152,7 @@ def calculateDatasetIOU(dataloader,model,device,dataSet_size):
 
             target=data[1]["boxes"][0][0].cpu().numpy()
             pred=model(data[0].to(device))
-            print(pred)
+            # print(pred)
 
             # for key, values in pred[0].items():
             #     print(key, values)
@@ -166,10 +166,10 @@ def calculateDatasetIOU(dataloader,model,device,dataSet_size):
             box=box[index]
             print(index)
 
-            print("Pred",pred)
-            print("Target",target)
-
-            print(box.cpu().numpy())
+            # print("Pred",pred)
+            # print("Target",target)
+            #
+            # print(box.cpu().numpy())
 
             # result=calculateIOU(torch.squeeze(pred[0]["boxes"],0),torch.squeeze(target[0]["boxes"],0))
             result = calculateIOU(box.cpu().numpy(), target)
