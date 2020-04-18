@@ -137,7 +137,7 @@ class MyDataset():
             test_copy = copy.deepcopy(label_array)
             # self.saveByChannel(image, "testOriginal"+str(self.count), "result", boxes=label_array)
             image = np.array(image)
-            image, label_array = self.preCrop(image, 0.8, label_array)
+            image, label_array = self.preCrop(image, 0.9, label_array,5)
             image = Image.fromarray(image)
 
             image = transforms.Resize([self.opts.crop_size, self.opts.crop_size])(image)
