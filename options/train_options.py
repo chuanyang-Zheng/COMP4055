@@ -25,7 +25,7 @@ class TrainOptions(BaseOptions):
         parser.add_argument('--beta1', type=float, default=0.5, help='momentum term of adam')
         parser.add_argument('--lr', type=float, default=0.0002, help='initial learning rate for adam')
         parser.add_argument('--lr_policy', type=str,default="linear" , help='initial learning rate for adam')
-        parser.add_argument('--record_ID', type=str, default=0, help='record file id. such as train_record-0.txt')
+        parser.add_argument('--record_ID', type=str, default="begin", help='record file id. such as train_record-0.txt')
 
         self.isTrain = True
         return parser
