@@ -2,10 +2,12 @@
 from __future__ import print_function
 import torch
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageDraw
 import os
 import time
 import numpy as np
+import copy
+import torchvision.transforms as transforms
 def tensor2im(input_image, imtype=np.uint8):
     """"Converts a Tensor array into a numpy image array.
     Parameters:
@@ -142,6 +144,8 @@ def calculateIOU(boxA,boxB):
     return iou
 
 def calculateDatasetIOU(dataloader,model,device,dataSet_size):
+    if not os.path.exists("result/compare"):
+        os.makedirs("result/compare")
     model.eval()
     count=0
     print("Find IOU")
@@ -151,6 +155,7 @@ def calculateDatasetIOU(dataloader,model,device,dataSet_size):
 
 
             target=data[1]["boxes"][0][0].cpu().numpy()
+            original_image=transforms.ToPILImage()(torch.squeeze(data[0],0))
             pred=model(data[0].to(device))
             # print(pred)
 
@@ -164,7 +169,8 @@ def calculateDatasetIOU(dataloader,model,device,dataSet_size):
             index=torch.argmax(score)
             # print(index)
             box=box[index]
-            print(index)
+            saveByChannel(original_image,i,"result/compare",target,box.cpu().numpy())
+
 
             # print("Pred",pred)
             # print("Target",target)
@@ -188,3 +194,18 @@ def processTarget(targets,images,device):
 
 
     return target_processed
+
+
+def drawRectangle(image,boxes_truth=None,box_predicted=None):
+
+    img1 = ImageDraw.Draw(image)
+    img1.rectangle([(boxes_truth[0],boxes_truth[1]), (boxes_truth[2], boxes_truth[3])], outline=(255),width=1)#target
+    img1.rectangle([(box_predicted[0], box_predicted[1]), (box_predicted[2], box_predicted[3])], outline=(0), width=1)#predicted
+    return img1
+def saveByChannel(image,name,dic,boxes_truth=None,box_predicted=None):
+
+    name_tep=str(name)+'.png'
+    name_tep=os.path.join(dic,name_tep)
+    image_tmp=image
+    drawRectangle(image_tmp,boxes_truth,box_predicted)
+    image_tmp.save(name_tep)

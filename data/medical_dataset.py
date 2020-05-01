@@ -70,7 +70,7 @@ class MyDataset():
             test_copy=copy.deepcopy(label_array)
             # self.saveByChannel(image, "testOriginal"+str(self.count), "result", boxes=label_array)
             image=np.array(image)
-            image,label_array=self.preCrop(image,0.8,label_array)
+            image,label_array=self.preCrop(image,0.8,label_array,threshold=0)
             image=Image.fromarray(image)
 
             image = transforms.Resize([self.opts.crop_size,self.opts.crop_size])(image)
@@ -368,13 +368,13 @@ class MyDataset():
         boxes[3]=newYMax
         return boxes
 
-    def preCrop(self,image,coefficient,box):
+    def preCrop(self,image,coefficient,box,threshold=0):
         top=0
         size=image.shape[0]
         for i in range(size):
             count=0.0
             for j in range(size):
-                if image[i][j]==0:
+                if image[i][j]<=threshold:
                     count=count+1
 
             if count/size<coefficient:
@@ -384,7 +384,7 @@ class MyDataset():
         for i in range(size):
             count=0.0
             for j in range(size):
-                if image[size-i-1][j]==0:
+                if image[size-i-1][j]<=threshold:
                     count=count+1
             if count/size<coefficient:
                 button=size-i-1
@@ -394,7 +394,7 @@ class MyDataset():
         for i in range(size):
             count=0.0
             for j in range(size):
-                if image[j][i]==0:
+                if image[j][i]<=threshold:
                     count=count+1
             if count/size<coefficient:
                 left=i
@@ -403,7 +403,7 @@ class MyDataset():
         for i in range(size):
             count=0.0
             for j in range(size):
-                if image[j][size-i-1]==0:
+                if image[j][size-i-1]<=threshold:
                     count=count+1
             if count/size<coefficient:
                 right=size-i-1
